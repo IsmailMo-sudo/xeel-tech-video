@@ -2,12 +2,23 @@ import { Composition, Folder } from "remotion";
 import { HelloWorld } from "./HelloWorld";
 import { Logo } from "./HelloWorld/Logo";
 import { Title } from "./HelloWorld/Title";
+import { XeelIntro } from "./XeelIntro/XeelIntro";
+import { DURATION, FPS, HEIGHT, WIDTH } from "./XeelIntro/theme";
 
 // Each <Composition> is an entry in the sidebar!
 
 export const RemotionRoot: React.FC = () => {
   return (
     <>
+      <Composition
+        // npx remotion render XeelIntro out/xeel-intro.mp4
+        id="XeelIntro"
+        component={XeelIntro}
+        durationInFrames={DURATION}
+        fps={FPS}
+        width={WIDTH}
+        height={HEIGHT}
+      />
       <Folder name="Elements">
         <Composition
           id="Logo"
